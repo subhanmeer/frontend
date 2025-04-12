@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="609" height="80" viewBox="0 0 609 80">
+  <!-- Ensure content scales to full width/height -->
+  <style>
+    .text { font-family: 'Almarai', Arial, sans-serif; }
+    .tagline { font-family: 'Almarai', 'Arial Narrow', sans-serif; }
+  </style>
+  
+  <!-- Scaled to fit 609x80 container -->
+  <g transform="translate(30 50)"> <!-- Adjusted positioning -->
+    <!-- Main Logo Text (larger and centered) -->
+    <text class="text" font-size="52" font-weight="700" fill="#2E4053">
+      Bazaar<tspan fill="#5D8A66">X</tspan>
+    </text>
+    
+    <!-- Tagline (positioned perfectly below) -->
+    <text y="30" class="tagline" font-size="18" font-weight="300" letter-spacing="1.5" fill="#5D8A66">
+      SMART INVESTING, SIMPLIFIED
+    </text>
+  </g>
+</svg>
