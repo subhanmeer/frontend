@@ -8,57 +8,88 @@ import Universe from './Universe';
 
 
 
-function PricingPage() {
+function PricingPage({
+  products =  [
+    {
+      type: 'left',
+      imageURL: "media/images/kite.png",
+      productName: "BazaarX Pro",
+      productDescription: "Pakistan's fastest trading platform with real-time PSX data, advanced Islamic finance tools, and Urdu language support. Available on Android and iOS.",
+      tryDemo: "/try-bazaarx",
+      learnMore: "/features",
+      googlePlay: "https://play.google.com/store/bazaarx",
+      appStore: "https://apps.apple.com/pk/app/bazaarx"
+    },
+    {
+      type: 'right',
+      imageURL: "media/images/console.png",
+      productName: "Investor Dashboard",
+      productDescription: "Your central hub for portfolio tracking with Shariah-compliance reports and tax calculations tailored for Pakistani investors.",
+      learnMore: "/dashboard-features"
+    },
+    {
+      type: 'left',
+      imageURL: "media/images/coin.png",
+      productName: "Al-Meezan Funds",
+      productDescription: "Invest in SECP-approved Islamic mutual funds commission-free, directly to your CDS account. Available on mobile and web.",
+      tryDemo: "/try-funds",
+      learnMore: "/islamic-funds",
+      googlePlay: "https://play.google.com/store/bazaarx-funds",
+      appStore: "https://apps.apple.com/pk/app/bazaarx-funds"
+    },
+    {
+      type: 'right',
+      imageURL: "media/images/kiteconnect.png",
+      productName: "BazaarX API",
+      productDescription: "Build Pakistan's next fintech solution with our REST APIs. Startups can showcase their apps to our user base.",
+      learnMore: "/api-docs"
+    },
+    {
+      type: 'left',
+      imageURL: "media/images/varsity.png",
+      productName: "BazaarX Academy",
+      productDescription: "Learn stock market fundamentals with Urdu/English lessons tailored for Pakistani investors, available in bite-sized mobile lessons.",
+      tryDemo: "/try-academy",
+      learnMore: "/education",
+      googlePlay: "https://play.google.com/store/bazaarx-academy",
+      appStore: "https://apps.apple.com/pk/app/bazaarx-academy"
+    }
+  ]
+}) {
     return (
-        <>
+        <main>
         <Hero/>
-        <LeftSection 
-        imageURL="media/images/kite.png"
-        productName="Kite"
-        productDescription="Our ultra-fast flagship trading platform with streaming market data, advanced charts, an elegant UI, and more. Enjoy the Kite experience on your Andriod and IOS devices."
-        tryDemo=""
-        learnMore=""
-        googleplat=""
-        appstore=""
-        />
-         <RightSection
-        imageURL="media/images/console.png"
-        productName="Console"
-        productDescription="The central dashboard for your Zerodha account. Gain insights into your trades and investments with in-depth reports and visualisations."
-        learnMore=""
-      />
-      <LeftSection
-        imageURL="media/images/coin.png"
-        productName="Coin"
-        productDescription="Buy direct mutual funds online, commission-free, delivered directly to your Demat account. Enjoy the investment experience on your Android and iOS devices."
-        tryDemo=""
-        learnMore=""
-        googlePlay=""
-        appStore=""
-      />
-      <RightSection
-        imageURL="media/images/kiteconnect.png"
-        productName="Kite Connect API"
-        productDescription="Build powerful trading platforms and experiences with our super simple HTTP/JSON APIs. If you are a startup, build your investment app and showcase it to our clientbase."
-        learnMore=""
-      />
-      <LeftSection
-        imageURL="media/images/varsity.png"
-        productName="Varsity mobile"
-        productDescription="An easy to grasp, collection of stock market lessons with in-depth coverage and illustrations. Content is broken down into bite-size cards to help you learn on the go."
-        tryDemo=""
-        learnMore=""
-        googlePlay=""
-        appStore=""
-      />
-      <p className="text-center mt-5 mb-5">
-        Want to know more about our technology stack? Check out the Zerodha.tech
-        blog.
+        {products.map((product, index) => (
+          product.type === 'left' ? (
+            <LeftSection
+            key={index}
+            imageURL={product.imageURL}
+            productName={product.productName}
+            productDescription={product.productDescription}
+            tryDemo={product.tryDemo}
+            learnMore={product.learnMore}
+            googlePlay={product.googlePlay}
+            appStore={product.appStore}
+          />
+          ) : (
+            <RightSection
+            key={index}
+            imageURL={product.imageURL}
+            productName={product.productName}
+            productDescription={product.productDescription}
+            learnMore={product.learnMore}
+          />
+          )
+        ))}
+
+        <p className="text-center my-5 text-muted">
+        Interested in our technology? Visit our <a href="/tech-blog" className="text-primary">engineering blog</a>.
       </p>
+
       <Universe />
 
 
-        </>
+        </main>
     )
 }
 

@@ -1,51 +1,64 @@
 import React from "react";
 
-function Awards() {
+function Awards({
+  title = "Pakistan's Most Trusted Stock Broker",
+  description = "1.5+ million BazaarX clients account for over 20% of all retail trading volume on the PSX (Pakistan Stock Exchange) daily through:",
+  servicesLeft = [
+    "Futures & Options",
+    "Commodity Trading",
+    "Currency Exchange"
+  ],
+  servicesRight = [
+    "Stocks & IPOs",
+    "Islamic Mutual Funds",
+    "Sukuk & Bonds"
+  ]
+}) {
   return (
-    <div className="container mt-5">
-      <div className="row">
-        <div className="col-6 p-5">
-          <img src="media/images/largestBroker.svg" alt="" />
+    <div className="container py-5 my-5 border-top border-accent">
+      <div className="row align-items-center ">
+        <div className="col-md-6 p-4">
+          <img 
+           src="media/images/largestBroker.svg" 
+           alt="" 
+           className="img-fluid"
+           style={{ maxWidth: '400px' }}/>
         </div>
-        <div className="col-6 p-5 mt-5">
-          <h1>Largest stock broker in Paksitan</h1>
-          <p className="mb-5">
-            2+ million zerodha clients contribute to cover 15% of all retail
-            order volumes in Pakistan daily by trading and investing in:
+
+        <div className="col-md-6 p-4">
+          <h1 className="text-primary mb-4">{title}</h1>
+          <p className="lead mb-5">
+            {description}
           </p>
+
           <div className="row">
-            <div className="col-6">
-              <ul>
-                <li>
-                  <p>Futures an Options</p>
-                </li>
-                <li>
-                  <p>Commodity derivatives</p>
-                </li>
-                <li>
-                  <p>Currency derivatives</p>
-                </li>
+            <div className="col-md-6">
+              <ul className="list-unstyled">
+                {servicesLeft.map((service, index) => (
+                 <li key={`left-${index}`} className="mb-3">
+                  <span className="text-accent">✓</span>{service}
+                 </li>    
+                ))}
               </ul>
             </div>
             <div className="col-6">
               <ul>
-                <li>
-                  <p>Stocks & IPOs</p>
-                </li>
-                <li>
-                  <p>Direct mutual funds</p>
-                </li>
-                <li>
-                  <p>Bonds and Growth</p>
-                </li>
+                {servicesRight.map((service, index) => (
+                  <li key={`right-${index}`} className="mb-3">
+                    <span className="text-accent">✓</span>{service}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
-          <img
-            src="media\images\pressLogos.png"
-            alt=""
-            style={{ width: "90%" }}
-          />
+          <div className="mt-5">
+            <p className="text-muted mb-3">As featured in:</p>
+            <img 
+              src="media/images/pressLogos.png"
+              alt="Pakistan's leading financial publications including Dawn, The News, and Business Recorder"
+              className="img-fluid"
+              style={{maxWidth: '100%'}}/>
+          </div>
         </div>
       </div>
     </div>

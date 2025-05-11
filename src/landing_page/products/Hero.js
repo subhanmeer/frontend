@@ -1,20 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Hero() {
+
+function Hero({
+    title = "Pakistani-First Trading Technology",
+  subtitle = "Shariah-compliant platforms designed for Pakistan's investors",
+  ctaText = "Explore Investment Products",
+  ctaLink = "/investments"
+}) {
     return ( 
-        <div className='container border-bottom mb-5'>
-            <div className='text-center mt-5 p-3'>
-                <h1>Technology</h1>
-                <h3 className='text-muted mt-3 fs-4'>
-                    Sleek, modern and intuitive trading platforms
+        <div className='container border-bottom border-accent pb-5 mb-5'>
+            <div className='text-center py-5'>
+                <h1 className='display-5 text-primary'>{title}</h1>
+                <h3 className='text-accent mt-3 lead'>
+                    {subtitle}
                 </h3>
-                <p className='mt-3 mb-5'>
-                    Check out our{" "}
-                    <a href='' style={{textDecoration: "none"}}>
-                        investment offerings{" "}
-                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    </a>
-                </p>
+                <div className='mt-4'>
+                    <Link to={ctaLink}
+                    className='btn btn-outline-primary px-4 py-2'>
+                        {ctaText} <i className="fas fa-arrow-right ms-2"></i>
+                    </Link>
+                </div>
             </div>
         </div>
      );

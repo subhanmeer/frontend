@@ -11,7 +11,7 @@ import OpenAccount from '../OpenAccount';
 function HomePage() {
     return (  
 
-        <>
+        <main>
         
         <Hero/>
         <Awards/>
@@ -20,7 +20,7 @@ function HomePage() {
         <Education/>
         <OpenAccount/>
        
-        </>
+        </main>
     );
 }
 

@@ -4,13 +4,13 @@ import Brokerage from './Brokerage';
 import OpenAccount from "../OpenAccount";
 
 
-function PricingPage() {
+function PricingPage({ showOpenAccount = true }) {
     return ( 
-        <>
+        <main>
         <Hero/>
-        <OpenAccount/>
+        {showOpenAccount && <OpenAccount/>}
         <Brokerage/>
-        </>
+        </main>
      );
 }
 

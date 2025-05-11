@@ -1,40 +1,59 @@
-import React from 'react';
+import React from "react";
 
-function Hero() {
-    return ( 
-        <div className='container'>
-        <div className='row p-5 mt-5 border-bottom text-center'>
-            <h1>Pricing</h1>
-            <h3 className='text-muted mt-3 fs-5'>
-                Free quity investments and flat RS20 traday and F%O trades 
-            </h3>
+function Hero({
+  title = "Transparent Pricing for Pakistan",
+  subtitle = "Free equity investments and flat Rs. 20 intraday and F&O trades",
+  pricingFeatures = [
+    {
+      icon: "media/images/pricingEquity.svg",
+      title: "Free Equity Delivery",
+      description:
+        "All PSX equity delivery investments are absolutely free - Rs. 0 brokerage.",
+      alt: "Equity investment illustration",
+    },
+    {
+      icon: "media/images/intradayTrades.svg",
+      title: "Intraday and F&O",
+      description:
+        "Flat Rs. 20 or 0.03% (whichever is lower) per executed order on intraday trades.",
+      alt: "Intraday trading illustration",
+    },
+    {
+      icon: "media/images/pricingEquity.svg",
+      title: "Free Islamic Funds",
+      description:
+        "All Islamic mutual fund investments are free - Rs. 0 commissions & charges.",
+      alt: "Mutual funds illustration",
+    },
+  ],
+}) {
+  return (
+    <div className="container">
+      <div className="row py-5 border-bottom border-accent text-center">
+        <div className="col-12">
+          <h1 className="display-5 text-primary">{title}</h1>
+          <h3 className="text-accent mt-3 lead">{subtitle}</h3>
         </div>
-        <div className='row p-5 mt-5 text-center'>
-            <div className='col-4 p-4'>
-                <img src='media/images/pricingEquity.svg' alt="Responsive"/>
-                <h1 className='fs-3'>Free equity delivery</h1>
-                <p className='text-muted'>
-                    All equity delivery investments (NSE, BSE), are absolutely free - Rs0 brokerage.
-                </p>
+      </div>
+
+      <div className="row py-5 g-4">
+        {pricingFeatures.map((feature, index) => (
+          <div key={index} className="col-md-4 p-4">
+            <div className="h-100 p-4">
+              <img
+                src={feature.icon}
+                alt={feature.alt}
+                className="img-fluid mb-4"
+                style={{ height: "80px" }}
+              />
+              <h2 className="h4 text-primary mb-3">{feature.title}</h2>
+              <p className="text-muted mb-0">{feature.description}</p>
             </div>
-            <div className='col-4 p-4'>
-                <img src='media/images/intradayTrades.svg'/>
-                <h1 className='fs-3'>Intraday and F&O trades</h1>
-                <p className='text-muted'>
-                    Flat Rs. 20 or 0.03% (whichever is lower) per executed order on intraday trades across equity, currency, and commodity trades.
-                </p>
-            </div>
-            <div className='col-4 p-4'>
-                <img src='media/images/pricingEquity.svg'/>
-                <h1 className='fs-3'>Free direct MF</h1>
-                <p className='text-muted'>
-                    All direct mutual fund investments are absolutely free - Rs. 0 commissions % DP charges.
-                </p>
-            </div>
-        </div>
-        </div>
-        
-     );
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Hero;

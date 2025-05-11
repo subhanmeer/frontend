@@ -4,10 +4,10 @@ import Team from "./Team";
 
 function AboutPage() {
     return ( 
-        <>
+        <main>
         <Hero/>
         <Team/>
-        </>
+        </main>
      );
 }
 

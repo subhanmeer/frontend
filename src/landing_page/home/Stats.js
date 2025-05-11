@@ -1,31 +1,69 @@
-import React from 'react';
+import React from "react";
 
-function Stats() {
-    return ( 
-        <div className='container p-3'>
-            <div className='row p-5'>
-            <div className='col-6 p-5'>
-                <h1 className='fs-2 mb-5'>Trust with confidence</h1>
-                <h2 className='fs-4'>Customer-first always</h2>
-                <p className='text-muted'>that's why 1.3+ crore customers trust Zerodha with rs3.5+ Lakh crores worth of equity investments.</p>
-
-                <h2 className='fs-4'>No spam or gimmicks</h2>
-                <p className='text-muted'>No gimmicks, spam, "gamification", or annoying psuh notifications. High quality apps that you use at your pace, the way you like.</p>
-                <h2 className='fs-4'>The Zerodha universe</h2>
-                <p className='text-muted'>Not just an app, but a whole ecosystem. Our investments in 30+ fintech startups offer you tailored services specific to your needs.</p>
-                <h2 className='fs-4'>Do better with money</h2>
-                <p className='text-muted'>With initiatives like Nudge and Kill Switch, we don't just facilitate transactions, but actively help you do better with your money.</p>
+function Stats({
+  trustPoints = [
+    {
+      title: "Customer-first always",
+      description:
+        "That's why 2+ million Pakistanis trust BazaarX with with Rs. 50,000 + crores worth of investments.",
+    },
+    {
+      title: "No spam or gimmicks",
+      description:
+        "No pushy sales, 'gamification', or annoying notifications. High quality tools that work at your pace.",
+    },
+    {
+      title: "The BazaarX ecosystem",
+      description:
+        "More than just an app - our partnerships with 15+ Pakistani fintechs offer services tailored for you.",
+    },
+    {
+      title: "Grow your wealth",
+      description:
+        "With features like Islamic Portfolio Builder and Risk Shield, we help you invest wisely according to your values.",
+    },
+  ],
+  imagePath = "media/images/ecosystem.png",
+  imageAlt = "BazaarX ecosystem serving Pakistani investors",
+}) {
+  return (
+    <div className="container py-3 my-5 border-top border-accent">
+      <div className="row align-items-center">
+        <div className="col-lg-6 p-4">
+          <h1 className="display-6 text-primary mb-5">
+            Trusted by Pakistan's Investors
+          </h1>
+          {trustPoints.map((point, index) => (
+            <div key={index} className="mb-4">
+                <h2 className="h4 text-accent mb-2">{point.title}</h2>
+                <p className='text-muted'>{point.description}</p>
             </div>
-            <div className='col-6'>
-                <img src='media/images/ecosystem.png' alt='' style={{width:"90%"}}/>
-                <div className='text-center'>
-                    <a href='' className='mx-5' style={{textDecoration:"none"}}>Explore our products <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                    <a href='' style={{textDecoration:"none"}} > try Kite</a>
-                </div>
-            </div>
-            </div>
+          ))}
         </div>
-     );
+
+
+        <div className="col-lg-6 p-4 text-center">
+          <img
+            src={imagePath}
+            alt={imageAlt}
+            className="img-fluid rounded shadow"
+            style={{ maxWidth: "90%" }}
+          />
+          <div className="mt-4">
+            <a href="/products" 
+            className="btn btn-outline-primary mx-2" >
+              Explore our products
+              <i className="fas fa-arrow-right ms-2"></i>
+            </a>
+            <a href="/try-platform" 
+            className="btn btn-link text-primary">
+              Try BazaarX Web
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Stats;
