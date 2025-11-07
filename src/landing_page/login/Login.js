@@ -4,9 +4,11 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 const Login = ({
-  apiUrl = `${process.env.REACT_APP_API_URL}/login` || "http://localhost:3002/login",
-  redirectUrl = process.env.REACT_APP_REDIRECT_URL || "http://localhost:3001",
+
+  apiUrl = `${process.env.REACT_APP_API_URL}/login`,
+  redirectUrl = process.env.REACT_APP_REDIRECT_URL,
 }) => {
+
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",

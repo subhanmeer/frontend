@@ -4,9 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 function Signup({
-  apiUrl = process.env.REACT_APP_API_URL
-  ? `${process.env.REACT_APP_API_URL}/signup`
-  : "http://localhost:3002/signup",
+  apiUrl = `${process.env.REACT_APP_API_URL}/signup`,
   loginPath = "/login",
 }) {
   const navigate = useNavigate();
