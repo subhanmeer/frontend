@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 const Login = ({
-  apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3002/login",
+  apiUrl = `${process.env.REACT_APP_API_URL}/login` || "http://localhost:3002/login",
   redirectUrl = process.env.REACT_APP_REDIRECT_URL || "http://localhost:3001",
 }) => {
   const navigate = useNavigate();
@@ -76,7 +76,7 @@ const Login = ({
         // Store user data in localStorage
         localStorage.setItem("user", JSON.stringify(user));
         setTimeout(() => {
-          window.location.href = "http://localhost:3001"; // Using react-router navigation instead of window.location
+          window.location.href = redirectUrl; // Using react-router navigation instead of window.location
         }, 1500);
       } else {
         showError(message);
@@ -120,7 +120,7 @@ const Login = ({
                     Email or Phone (Pakistan)
                   </label>
                   <input
-                    type="email"
+                    type="text"
                     name="email"
                     value={email}
                     className="form-control"
