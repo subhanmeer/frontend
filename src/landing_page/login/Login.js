@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "./Login.css"; // Create this CSS file
@@ -10,7 +9,6 @@ const Login = ({
   redirectUrl = process.env.REACT_APP_REDIRECT_URL,
 }) => {
 
-  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",
     password: "",
