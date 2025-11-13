@@ -6,22 +6,22 @@ function Footer() {
       <div className="container border-top mt-5"  style={{ borderColor: "var(--accent)" }}>
         <div className="row mt-5">
           <div className="col">
-            <img src="media/images/logos.svg" style={{ width: "100%", marginBottom: "1rem" }} />
+            <img src="media/images/logos.svg" style={{ width: "100%", marginBottom: "1rem" }} alt="BazaarX log" />
             <p style={{ color: "var(--primary)" }}>
             &copy; 2023 - 2024, BazaarX Technologies (PVT) Ltd. Karachi, Pakistan.
             </p>
             {/* Social Icons */}
           <div className="mt-3">
-              <a href="#" style={{ color: "var(--primary)", marginRight: "15px" }}>
+              <a href="/facebook" style={{ color: "var(--primary)", marginRight: "15px" }}>
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" style={{ color: "var(--primary)", marginRight: "15px" }}>
+              <a href="/twitter" style={{ color: "var(--primary)", marginRight: "15px" }}>
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#" style={{ color: "var(--primary)", marginRight: "15px" }}>
+              <a href="/linkedin" style={{ color: "var(--primary)", marginRight: "15px" }}>
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a href="#" style={{ color: "var(--primary)" }}>
+              <a href="/whatsapp" style={{ color: "var(--primary)" }}>
                 <i className="fab fa-whatsapp"></i>
               </a>
             </div>
@@ -32,35 +32,35 @@ function Footer() {
           <div className="col">
           <h6 style={{ color: "var(--primary)", fontWeight: "bold" }}>Company</h6>
           <ul className="list-unstyled">
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Our Story</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Platform</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Pricing</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Referral Programme</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Careers</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>BazaarX Labs</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Media & Press</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>CSR Initiatives</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Our Story</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Platform</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Pricing</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Referral Programme</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Careers</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>BazaarX Labs</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Media & Press</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>CSR Initiatives</a></li>
             </ul>
           </div>
           <div className="col">
             <h6 style={{ color: "var(--primary)", fontWeight: "bold" }}>Support</h6>
             <ul className="list-unstyled">
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Contact</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Help Center</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Blog</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Pricing Breakdown</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Resources</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>SECP Regulations</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Contact</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Help Center</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Blog</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Pricing Breakdown</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Resources</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>SECP Regulations</a></li>
             </ul>
           </div>
           <div className="col">
             <h6 style={{ color: "var(--primary)", fontWeight: "bold" }}>Account</h6>
             <ul className="list-unstyled">
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Open an Account</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Fund Transfer</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>30 Day Challenge</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>Halal Investments</a></li>
-              <li><a href="#" style={{ color: "var(--accent)", textDecoration: "none" }}>PSX Market Data</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Open an Account</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Fund Transfer</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>30 Day Challenge</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Halal Investments</a></li>
+              <li><a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>PSX Market Data</a></li>
             </ul>
           </div>
         </div>
@@ -85,8 +85,8 @@ function Footer() {
           </p>
 
           <p className="text-muted" style={{ fontSize: "12px" }}>
-            Need help? <a href="#" style={{ color: "var(--primary)", textDecoration: "none" }}>WhatsApp +92 300 1234567</a> | 
-            <a href="#" style={{ color: "var(--primary)", textDecoration: "none", marginLeft: "10px" }}>support@bazaarix.com</a>
+            Need help? <a href="/" style={{ color: "var(--primary)", textDecoration: "none" }}>WhatsApp +92 300 1234567</a> | 
+            <a href="/" style={{ color: "var(--primary)", textDecoration: "none", marginLeft: "10px" }}>support@bazaarix.com</a>
           </p>
 
           <p>
