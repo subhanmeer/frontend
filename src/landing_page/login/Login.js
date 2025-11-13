@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import "./Login.css"; // Create this CSS file
 
 const Login = ({
 
@@ -98,91 +99,99 @@ const Login = ({
   };
 
   return (
-    <div className="container py-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6 col-lg-4">
-          <div className="card shadow-sm border-accent">
-            <div className="card-body p-4">
-              <div className="text-center mb-4">
-                <img
-                  src="media/images/logos.svg"
-                  alt="BazaarX Logo"
-                  className="mb-3"
-                  style={{ height: "50px" }}
-                />
-                <h2 className="text-primary">Welcome to BazaarX</h2>
-                <p className="text-muted">
-                  Pakistan's Premier Trading Platform
-                </p>
-              </div>
-
-              <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label">
-                    Email or Phone (Pakistan)
-                  </label>
-                  <input
-                    type="text"
-                    name="email"
-                    value={email}
-                    className="form-control"
-                    placeholder="e.g. user@example.com or 03001234567"
-                    onChange={handleOnChange}
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="password" className="form-label">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    className="form-control"
-                    placeholder="Enter your password"
-                    onChange={handleOnChange}
-                    required
-                    minLength="6"
-                  />
-                </div>
-                <div className="d-grid mb-3">
-                  <button
-                    type="submit"
-                    className="btn btn-primary py-2"
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <>
-                        <span
-                          className="spinner-border spinner-border-sm me-2"
-                          role="status"
-                          aria-hidden="true"
-                        ></span>
-                        Logging in...
-                      </>
-                    ) : (
-                      "Login to Your Account"
-                    )}
-                  </button>
-                </div>
-                <div className="text-center">
-                  <Link
-                    to="/forgot-password"
-                    className="text-decoration-none text-accent"
-                  >
-                    Forgot Password?
-                  </Link>
-                </div>
-              </form>
-
-              <div className="text-center mt-4">
-                <p className="text-muted mb-0">New to BazaarX?</p>
-                <Link to="/signup" className="btn btn-outline-primary mt-2">
-                  Create Free Account
-                </Link>
-              </div>
+    <div className="login-container">
+      <div className="login-card">
+        {/* Header */}
+        <div className="login-header">
+          <div className="logo-container">
+            <img
+              src="media/images/logos.svg"
+              alt="BazaarX Logo"
+              className="login-logo"
+            />
+          </div>
+          <h2 className="login-title">Welcome to BazaarX</h2>
+          <p className="login-subtitle">Pakistan's Premier Trading Platform</p>
+        </div>
+        
+        {/* Form */}
+        <div className="login-body">
+          <form onSubmit={handleSubmit}>
+            {/* Email Field */}
+            <div className="form-group">
+              <label className="form-label">
+                <i className="fas fa-envelope icon"></i>
+                Email or Phone (Pakistan)
+              </label>
+              <input
+                type="text"
+                name="email"
+                value={email}
+                className="form-input"
+                placeholder="user@example.com or 03001234567"
+                onChange={handleOnChange}
+                required
+              />
             </div>
+
+            {/* Password Field */}
+            <div className="form-group">
+              <label className="form-label">
+                <i className="fas fa-lock icon"></i>
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                value={password}
+                className="form-input"
+                placeholder="Enter your password"
+                onChange={handleOnChange}
+                required
+                minLength="6"
+              />
+            </div>
+
+            {/* Login Button */}
+            <button
+              type="submit"
+              className={`login-btn ${isLoading ? 'loading' : ''}`}
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <div className="spinner"></div>
+                  Logging in...
+                </>
+              ) : (
+                <>
+                  <i className="fas fa-sign-in-alt icon"></i>
+                  Login to Your Account
+                </>
+              )}
+            </button>
+
+            {/* Forgot Password */}
+            <div className="forgot-link">
+              <Link to="/forgot-password">
+                <i className="fas fa-question-circle icon"></i>
+                Forgot Password?
+              </Link>
+            </div>
+          </form>
+
+          {/* Divider */}
+          <div className="divider">
+            <span>OR</span>
+          </div>
+
+          {/* Signup Section */}
+          <div className="signup-section">
+            <p className="signup-text">New to BazaarX?</p>
+            <Link to="/signup" className="signup-btn">
+              <i className="fas fa-user-plus icon"></i>
+              Create Free Account
+            </Link>
           </div>
         </div>
       </div>

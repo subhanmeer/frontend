@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, useLocation} from 'react-router-dom';
 import HomePage from './landing_page/home/HomePage';
 import Signup from './landing_page/signup/Signup';
 import AboutPage from './landing_page/about/AboutPage';
@@ -10,15 +10,23 @@ import SupportPage from './landing_page/support/SupportPage'
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 import NotFound from './landing_page/NotFound';
-import "./index.css";
 import Login from './landing_page/login/Login';
+import "./index.css";
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
-  <Navbar/>
-  <Routes>
+function AppLayout() {
+  const location = useLocation();
+
+  // Paths where Navbar $ Footer should NOT appear
+  const hideLayoutRoutes = ["/login", "/signup"];
+
+  const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
+
+  return (
+    <>
+    {!shouldHideLayout && <Navbar />} {/* hide navbar on login/signup*/}
+
+    <Routes>
     <Route path='/' element={<HomePage/>}/>
     <Route path='/signup' element={<Signup/>}/>
     <Route path='/login' element={<Login/>}/>
@@ -28,8 +36,21 @@ root.render(
     <Route path='/support' element={<SupportPage/>}/>
     <Route path='*' element={<NotFound/>}/>
   </Routes>
-  <Footer/>
+
+  {!shouldHideLayout && <Footer />} {/* hide footer on login/signup */}
+
+    </>
+  )
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <BrowserRouter>
+  <AppLayout/>
   </BrowserRouter>
 );
+
+
 
 
